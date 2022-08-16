@@ -67,6 +67,8 @@ function App() {
         pressedButton === '-' ||
         pressedButton === '+'
       ) {
+        if (pressedButton === '÷') pressedButton = '/';
+        else if (pressedButton === 'x') pressedButton = '*';
         setVisor((prevState) => prevState + ' ' + pressedButton + ' ');
       }
       // Parenteses
