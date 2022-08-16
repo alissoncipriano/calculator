@@ -1,10 +1,13 @@
-import { ChildrenProp } from '../../common/types';
 import { StyledVisor } from './styles';
 
-export const Visor = ({ children }: ChildrenProp) => {
+type VisorProps = {
+  texto: string;
+};
+
+export const Visor = ({ texto }: VisorProps) => {
   return (
     <StyledVisor>
-      <span>{children}</span>
+      <textarea rows={1} value={texto} disabled />
     </StyledVisor>
   );
 };

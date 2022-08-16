@@ -1,29 +1,74 @@
+import { ChildrenProp } from '../../common/types';
 import { Botao } from '../Botao/Botao';
 import { StyledTeclado } from './styles';
 
-export const Teclado = () => {
+type TecladoProps = ChildrenProp & {
+  updateVisor: (pressedButton: string) => void;
+};
+
+export const Teclado = ({ children, updateVisor }: TecladoProps) => {
   return (
     <StyledTeclado>
-      <Botao bg='dark'>(</Botao>
-      <Botao bg='dark'>)</Botao>
-      <Botao bg='dark'>%</Botao>
-      <Botao bg='dark'>AC</Botao>
-      <Botao bg='light'>7</Botao>
-      <Botao bg='light'>8</Botao>
-      <Botao bg='light'>9</Botao>
-      <Botao bg='dark'>÷</Botao>
-      <Botao bg='light'>4</Botao>
-      <Botao bg='light'>5</Botao>
-      <Botao bg='light'>6</Botao>
-      <Botao bg='dark'>x</Botao>
-      <Botao bg='light'>1</Botao>
-      <Botao bg='light'>2</Botao>
-      <Botao bg='light'>3</Botao>
-      <Botao bg='dark'>-</Botao>
-      <Botao bg='light'>0</Botao>
-      <Botao bg='light'>.</Botao>
-      <Botao bg='color'>=</Botao>
-      <Botao bg='dark'>+</Botao>
+      <Botao bg='dark' updateVisor={updateVisor}>
+        (
+      </Botao>
+      <Botao bg='dark' updateVisor={updateVisor}>
+        )
+      </Botao>
+      <Botao bg='dark' updateVisor={updateVisor}>
+        del
+      </Botao>
+      <Botao bg='dark' updateVisor={updateVisor}>
+        AC
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        7
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        8
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        9
+      </Botao>
+      <Botao bg='dark' updateVisor={updateVisor}>
+        ÷
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        4
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        5
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        6
+      </Botao>
+      <Botao bg='dark' updateVisor={updateVisor}>
+        x
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        1
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        2
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        3
+      </Botao>
+      <Botao bg='dark' updateVisor={updateVisor}>
+        -
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        0
+      </Botao>
+      <Botao bg='light' updateVisor={updateVisor}>
+        .
+      </Botao>
+      <Botao bg='color' updateVisor={updateVisor}>
+        =
+      </Botao>
+      <Botao bg='dark' updateVisor={updateVisor}>
+        +
+      </Botao>
     </StyledTeclado>
   );
 };

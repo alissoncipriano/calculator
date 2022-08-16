@@ -14,7 +14,16 @@ export const StyledVisor = styled.div`
   padding: 15px;
   box-sizing: border-box;
 
-  span {
+  textarea {
     margin-top: 30px;
+    width: 100%;
+    text-align: right;
+    outline: none;
+    border: none;
+    resize: none;
+    font-size: 1em;
+    font-weight: 300;
+    background: none;
+    color: ${colors.black};
   }
 `;
