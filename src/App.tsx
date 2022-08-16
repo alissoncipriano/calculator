@@ -76,10 +76,12 @@ function App() {
         setVisor((prevState) => prevState + pressedButton);
       // Igual
       else if (pressedButton === '=') {
-        let expression = Parser.parse(visor);
+        let expression = Parser.parse(visor.replace(/,/g, '.'));
         let result = expression.evaluate({ x: 1 });
 
-        setVisor(result + '');
+        result = result.toString();
+
+        setVisor(result.replace('.', ','));
       }
     }
   };
