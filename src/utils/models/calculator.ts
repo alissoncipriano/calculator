@@ -1,8 +1,9 @@
 import { Parser } from '../../common/constants';
-import { Action } from '../action';
+import { Visor } from './Visor';
 
 export class Calculator {
   equation: string;
+  visor: Visor = new Visor();
 
   constructor() {
     this.equation = '0';
@@ -18,17 +19,14 @@ export class Calculator {
     let expression = Parser.parse(this.equation.replace(/,/g, '.'));
     let result = expression.evaluate({ x: 1 });
 
+    this.visor.setValue(result.toString());
+
     return result.toString();
   }
 
-  updateVisor(pressedButton: string, visor: string) {
-    const action = new Action();
+  updateVisor(pressedButton: string) {
+    this.visor.verify(pressedButton);
 
-    const newVisor = action.verify(pressedButton, visor);
-
-    if (newVisor === false) return 'Error';
-    else if (newVisor === '/' || newVisor === '*')
-      return visor + ' ' + newVisor + ' ';
-    return newVisor;
+    return this.visor.getValue();
   }
 }
