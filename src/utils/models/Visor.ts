@@ -2,7 +2,7 @@ import { ButtonGroups } from '../../common/constants';
 import { checkButton } from '../mathCalculatorUtils';
 
 export class Visor {
-  value: string | 'Error';
+  private value: string | 'Error';
 
   constructor() {
     this.value = '0';

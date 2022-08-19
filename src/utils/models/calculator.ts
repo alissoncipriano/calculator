@@ -2,8 +2,8 @@ import { Parser } from '../../common/constants';
 import { Visor } from './Visor';
 
 export class Calculator {
-  equation: string;
-  visor: Visor = new Visor();
+  private equation: string;
+  private visor: Visor = new Visor();
 
   constructor() {
     this.equation = '0';
